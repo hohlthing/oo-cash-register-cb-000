@@ -15,4 +15,15 @@ class CashRegister
     @total += price * quantity
     quantity.times { @cart << item }
   end
+
+  def apply_discount
+    if @
+
+
+    "After the discount, the total comes to #{@total}."
+  end
+
+  def items
+    @cart
+  end
 end
