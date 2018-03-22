@@ -7,9 +7,9 @@ class CashRegister
     @cart = []
   end
 
-  def total
-    @total
-  end
+  # def total
+  #   @total
+  # end
 
   def add_item(item, price, quantity = 1)
     @previous_total = @total
@@ -27,9 +27,9 @@ class CashRegister
     end
   end
 
-  def items
-    @cart
-  end
+  # def items
+  #   @cart
+  # end
 
   def void_last_transaction
     @total = @previous_total
