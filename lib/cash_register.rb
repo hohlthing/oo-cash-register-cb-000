@@ -1,19 +1,21 @@
 class CashRegister
-  attr_accessor :total, :discount
+  attr_accessor :total, :discount, :cart
 
   def initialize(discount = 0)
-    @total = 0
+    @total = []
     @discount = discount
     @cart = []
   end
 
   def total
-    @total
+    total = @total.each { |x| sum += x }
   end
 
   def add_item(item, price, quantity = 1)
-    @total += price * quantity
-    quantity.times { @cart << item }
+    quantity.times do
+      @cart << item
+      @total << price * quantity
+    end
   end
 
   def apply_discount
@@ -28,4 +30,10 @@ class CashRegister
   def items
     @cart
   end
+
+  def void_last_transaction
+    @cart.pop
+    @total.pop
+  end
+
 end
